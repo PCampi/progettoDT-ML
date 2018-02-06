@@ -430,7 +430,7 @@
     <created_date>2018/02/06 10:25:32.559</created_date>
     <modified_user>-</modified_user>
     <modified_date>2018/02/06 10:25:32.559</modified_date>
-    <key_for_session_key />
+    <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA=</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
   <notepads>
@@ -548,21 +548,21 @@
     </hop>
     <hop>
       <from>Sort code carbone</from>
-      <to>Multiway Merge Join</to>
+      <to>Merge tutti</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
       <from>Sort code benzina/diesel</from>
-      <to>Multiway Merge Join</to>
+      <to>Merge tutti</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
       <from>Select valori CO2</from>
-      <to>Multiway Merge Join</to>
+      <to>Merge tutti</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>Multiway Merge Join</from>
+      <from>Merge tutti</from>
       <to>Select valori tabella finale</to>
       <enabled>Y</enabled>
     </hop>
@@ -571,95 +571,53 @@
       <to>Select valori finali not null</to>
       <enabled>Y</enabled>
     </hop>
+    <hop>
+      <from>Energia solare</from>
+      <to>Seleziona 2014 energia solare</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Seleziona 2014 energia solare</from>
+      <to>Sort code energia solare</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Sort code energia solare</from>
+      <to>Merge tutti</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Popolazione</from>
+      <to>Seleziona 2014 popolazione</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Seleziona 2014 popolazione</from>
+      <to>Sort popolazione</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Sort popolazione</from>
+      <to>Merge tutti</to>
+      <enabled>Y</enabled>
+    </hop>
   </order>
   <step>
-    <name>Tutti codici nazione</name>
+    <name>Benzina e diesel</name>
     <type>CsvInput</type>
     <description />
-    <distribute>N</distribute>
+    <distribute>Y</distribute>
     <custom_distribution />
     <copies>1</copies>
     <partitioning>
       <method>none</method>
       <schema_name />
     </partitioning>
-    <filename>/Users/pietro/Documents/Universita/Pogetto DT_ML/Dataset/Puliti_da_usare/Country-codes-v1.csv</filename>
+    <filename>/Users/pietro/Documents/Universita/Pogetto DT_ML/Dataset/Puliti_da_usare/Gas and Diesel 2011-2016.csv</filename>
     <filename_field />
     <rownum_field />
     <include_filename>N</include_filename>
     <separator>;</separator>
-    <enclosure>"</enclosure>
-    <header>Y</header>
-    <buffer_size>50000</buffer_size>
-    <lazy_conversion>Y</lazy_conversion>
-    <add_filename_result>N</add_filename_result>
-    <parallel>N</parallel>
-    <newline_possible>N</newline_possible>
-    <encoding />
-    <fields>
-      <field>
-        <name>﻿official_name_en</name>
-        <type>String</type>
-        <format />
-        <currency>€</currency>
-        <decimal>,</decimal>
-        <group>.</group>
-        <length>46</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-      </field>
-      <field>
-        <name>ISO3166-1-Alpha-3</name>
-        <type>String</type>
-        <format />
-        <currency>€</currency>
-        <decimal>,</decimal>
-        <group>.</group>
-        <length>3</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-      </field>
-      <field>
-        <name>CLDR display name</name>
-        <type>String</type>
-        <format />
-        <currency>€</currency>
-        <decimal>,</decimal>
-        <group>.</group>
-        <length>30</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-      </field>
-    </fields>
-    <cluster_schema />
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>48</xloc>
-      <yloc>112</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>Carbone</name>
-    <type>CsvInput</type>
-    <description />
-    <distribute>N</distribute>
-    <custom_distribution />
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name />
-    </partitioning>
-    <filename>/Users/pietro/Documents/Universita/Pogetto DT_ML/Dataset/Puliti_da_usare/Charcoal_UNData.csv</filename>
-    <filename_field />
-    <rownum_field />
-    <include_filename>N</include_filename>
-    <separator>,</separator>
     <enclosure>"</enclosure>
     <header>Y</header>
     <buffer_size>50000</buffer_size>
@@ -687,7 +645,7 @@
         <currency>€</currency>
         <decimal>,</decimal>
         <group>.</group>
-        <length>28</length>
+        <length>93</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
@@ -734,7 +692,7 @@
     </remotesteps>
     <GUI>
       <xloc>48</xloc>
-      <yloc>16</yloc>
+      <yloc>272</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -877,21 +835,21 @@
     </GUI>
   </step>
   <step>
-    <name>Benzina e diesel</name>
+    <name>Carbone</name>
     <type>CsvInput</type>
     <description />
-    <distribute>Y</distribute>
+    <distribute>N</distribute>
     <custom_distribution />
     <copies>1</copies>
     <partitioning>
       <method>none</method>
       <schema_name />
     </partitioning>
-    <filename>/Users/pietro/Documents/Universita/Pogetto DT_ML/Dataset/Puliti_da_usare/Gas and Diesel 2011-2016.csv</filename>
+    <filename>/Users/pietro/Documents/Universita/Pogetto DT_ML/Dataset/Puliti_da_usare/Charcoal_UNData.csv</filename>
     <filename_field />
     <rownum_field />
     <include_filename>N</include_filename>
-    <separator>;</separator>
+    <separator>,</separator>
     <enclosure>"</enclosure>
     <header>Y</header>
     <buffer_size>50000</buffer_size>
@@ -919,7 +877,7 @@
         <currency>€</currency>
         <decimal>,</decimal>
         <group>.</group>
-        <length>93</length>
+        <length>28</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
@@ -966,127 +924,12 @@
     </remotesteps>
     <GUI>
       <xloc>48</xloc>
-      <yloc>272</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>Sort country codici nazione</name>
-    <type>SortRows</type>
-    <description />
-    <distribute>N</distribute>
-    <custom_distribution />
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name />
-    </partitioning>
-    <directory>%%java.io.tmpdir%%</directory>
-    <prefix>out</prefix>
-    <sort_size>1000000</sort_size>
-    <free_memory />
-    <compress>N</compress>
-    <compress_variable />
-    <unique_rows>N</unique_rows>
-    <fields>
-      <field>
-        <name>﻿official_name_en</name>
-        <ascending>Y</ascending>
-        <case_sensitive>N</case_sensitive>
-        <collator_enabled>N</collator_enabled>
-        <collator_strength>0</collator_strength>
-        <presorted>N</presorted>
-      </field>
-    </fields>
-    <cluster_schema />
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>240</xloc>
-      <yloc>112</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>Sort carbone</name>
-    <type>SortRows</type>
-    <description />
-    <distribute>Y</distribute>
-    <custom_distribution />
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name />
-    </partitioning>
-    <directory>%%java.io.tmpdir%%</directory>
-    <prefix>out</prefix>
-    <sort_size>1000000</sort_size>
-    <free_memory />
-    <compress>N</compress>
-    <compress_variable />
-    <unique_rows>N</unique_rows>
-    <fields>
-      <field>
-        <name>Country Name</name>
-        <ascending>Y</ascending>
-        <case_sensitive>N</case_sensitive>
-        <collator_enabled>N</collator_enabled>
-        <collator_strength>0</collator_strength>
-        <presorted>N</presorted>
-      </field>
-    </fields>
-    <cluster_schema />
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>672</xloc>
       <yloc>16</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>Join carbone</name>
-    <type>MergeJoin</type>
-    <description />
-    <distribute>Y</distribute>
-    <custom_distribution />
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name />
-    </partitioning>
-    <join_type>LEFT OUTER</join_type>
-    <step1>Sort country codici nazione</step1>
-    <step2>Sort carbone</step2>
-    <keys_1>
-      <key>﻿official_name_en</key>
-    </keys_1>
-    <keys_2>
-      <key>Country Name</key>
-    </keys_2>
-    <cluster_schema />
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>832</xloc>
-      <yloc>48</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>Filtra carbone 2014</name>
+    <name>Filtra CO2 2014</name>
     <type>FilterRows</type>
     <description />
     <distribute>Y</distribute>
@@ -1101,23 +944,9 @@
     <compare>
       <condition>
         <negated>N</negated>
-        <conditions>
-          <condition>
-            <negated>N</negated>
-            <leftvalue>Year</leftvalue>
-            <function>=</function>
-            <rightvalue />
-            <value>
-              <name>constant</name>
-              <type>Integer</type>
-              <text>2014</text>
-              <length>-1</length>
-              <precision>0</precision>
-              <isnull>N</isnull>
-              <mask>####0;-####0</mask>
-            </value>
-          </condition>
-        </conditions>
+        <leftvalue>2014 [YR2014]</leftvalue>
+        <function>IS NOT NULL</function>
+        <rightvalue />
       </condition>
     </compare>
     <cluster_schema />
@@ -1129,81 +958,7 @@
     </remotesteps>
     <GUI>
       <xloc>240</xloc>
-      <yloc>16</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>Seleziona colonne carbone</name>
-    <type>SelectValues</type>
-    <description />
-    <distribute>Y</distribute>
-    <custom_distribution />
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name />
-    </partitioning>
-    <fields>
-      <field>
-        <name>Country or Area</name>
-        <rename>Country Name</rename>
-      </field>
-      <field>
-        <name>Quantity</name>
-        <rename>Charcoal consumption</rename>
-      </field>
-      <select_unspecified>N</select_unspecified>
-    </fields>
-    <cluster_schema />
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>464</xloc>
-      <yloc>16</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>Select valori carbone</name>
-    <type>SelectValues</type>
-    <description />
-    <distribute>Y</distribute>
-    <custom_distribution />
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name />
-    </partitioning>
-    <fields>
-      <field>
-        <name>ISO3166-1-Alpha-3</name>
-        <rename>Code</rename>
-      </field>
-      <field>
-        <name>﻿official_name_en</name>
-        <rename>Country name</rename>
-      </field>
-      <field>
-        <name>Charcoal consumption</name>
-        <rename />
-      </field>
-      <select_unspecified>N</select_unspecified>
-    </fields>
-    <cluster_schema />
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>992</xloc>
-      <yloc>48</yloc>
+      <yloc>368</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1273,8 +1028,8 @@
     </GUI>
   </step>
   <step>
-    <name>Seleziona colonne benzina/diesel</name>
-    <type>SelectValues</type>
+    <name>Filtra carbone 2014</name>
+    <type>FilterRows</type>
     <description />
     <distribute>Y</distribute>
     <custom_distribution />
@@ -1283,17 +1038,30 @@
       <method>none</method>
       <schema_name />
     </partitioning>
-    <fields>
-      <field>
-        <name>Country or Area</name>
-        <rename>Country Name</rename>
-      </field>
-      <field>
-        <name>Quantity</name>
-        <rename>Gas oil/diesel oil consumption</rename>
-      </field>
-      <select_unspecified>N</select_unspecified>
-    </fields>
+    <send_true_to />
+    <send_false_to />
+    <compare>
+      <condition>
+        <negated>N</negated>
+        <conditions>
+          <condition>
+            <negated>N</negated>
+            <leftvalue>Year</leftvalue>
+            <function>=</function>
+            <rightvalue />
+            <value>
+              <name>constant</name>
+              <type>Integer</type>
+              <text>2014</text>
+              <length>-1</length>
+              <precision>0</precision>
+              <isnull>N</isnull>
+              <mask>####0;-####0</mask>
+            </value>
+          </condition>
+        </conditions>
+      </condition>
+    </compare>
     <cluster_schema />
     <remotesteps>
       <input>
@@ -1302,14 +1070,14 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>464</xloc>
-      <yloc>272</yloc>
+      <xloc>240</xloc>
+      <yloc>16</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>Sort benzina/diesel</name>
-    <type>SortRows</type>
+    <name>Join CO2</name>
+    <type>MergeJoin</type>
     <description />
     <distribute>Y</distribute>
     <custom_distribution />
@@ -1318,23 +1086,15 @@
       <method>none</method>
       <schema_name />
     </partitioning>
-    <directory>%%java.io.tmpdir%%</directory>
-    <prefix>out</prefix>
-    <sort_size>1000000</sort_size>
-    <free_memory />
-    <compress>N</compress>
-    <compress_variable />
-    <unique_rows>N</unique_rows>
-    <fields>
-      <field>
-        <name>Country Name</name>
-        <ascending>Y</ascending>
-        <case_sensitive>N</case_sensitive>
-        <collator_enabled>N</collator_enabled>
-        <collator_strength>0</collator_strength>
-        <presorted>N</presorted>
-      </field>
-    </fields>
+    <join_type>LEFT OUTER</join_type>
+    <step1>Sort codes codici nazioni</step1>
+    <step2>Sort CO2</step2>
+    <keys_1>
+      <key>ISO3166-1-Alpha-3</key>
+    </keys_1>
+    <keys_2>
+      <key>Country Code</key>
+    </keys_2>
     <cluster_schema />
     <remotesteps>
       <input>
@@ -1343,8 +1103,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>672</xloc>
-      <yloc>272</yloc>
+      <xloc>800</xloc>
+      <yloc>336</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1382,6 +1142,115 @@
     </GUI>
   </step>
   <step>
+    <name>Join carbone</name>
+    <type>MergeJoin</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <join_type>LEFT OUTER</join_type>
+    <step1>Sort country codici nazione</step1>
+    <step2>Sort carbone</step2>
+    <keys_1>
+      <key>﻿official_name_en</key>
+    </keys_1>
+    <keys_2>
+      <key>Country Name</key>
+    </keys_2>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>832</xloc>
+      <yloc>48</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Merge tutti</name>
+    <type>MultiwayMergeJoin</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <join_type>INNER</join_type>
+    <step0>Sort code carbone</step0>
+    <step1>Sort code benzina/diesel</step1>
+    <step2>Select valori CO2</step2>
+    <step3>Sort code energia solare</step3>
+    <step4>Sort popolazione</step4>
+    <number_input>5</number_input>
+    <keys>
+      <key>Code</key>
+      <key>Code</key>
+      <key>Code</key>
+      <key>Code</key>
+      <key>Code</key>
+    </keys>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1376</xloc>
+      <yloc>160</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Select valori CO2</name>
+    <type>SelectValues</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <fields>
+      <field>
+        <name>ISO3166-1-Alpha-3</name>
+        <rename>Code</rename>
+      </field>
+      <field>
+        <name>﻿official_name_en</name>
+        <rename>Country Name</rename>
+      </field>
+      <field>
+        <name>CO2 production</name>
+      </field>
+      <select_unspecified>N</select_unspecified>
+    </fields>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1056</xloc>
+      <yloc>320</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
     <name>Select valori benzina/diesel</name>
     <type>SelectValues</type>
     <description />
@@ -1403,7 +1272,6 @@
       </field>
       <field>
         <name>Gas oil/diesel oil consumption</name>
-        <rename />
       </field>
       <select_unspecified>N</select_unspecified>
     </fields>
@@ -1421,7 +1289,45 @@
     </GUI>
   </step>
   <step>
-    <name>Filtra CO2 2014</name>
+    <name>Select valori carbone</name>
+    <type>SelectValues</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <fields>
+      <field>
+        <name>ISO3166-1-Alpha-3</name>
+        <rename>Code</rename>
+      </field>
+      <field>
+        <name>﻿official_name_en</name>
+        <rename>Country name</rename>
+      </field>
+      <field>
+        <name>Charcoal consumption</name>
+      </field>
+      <select_unspecified>N</select_unspecified>
+    </fields>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>992</xloc>
+      <yloc>48</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Select valori finali not null</name>
     <type>FilterRows</type>
     <description />
     <distribute>Y</distribute>
@@ -1431,14 +1337,27 @@
       <method>none</method>
       <schema_name />
     </partitioning>
-    <send_true_to />
+    <send_true_to>Calculator prova</send_true_to>
     <send_false_to />
     <compare>
       <condition>
         <negated>N</negated>
-        <leftvalue>2014 [YR2014]</leftvalue>
-        <function>IS NOT NULL</function>
-        <rightvalue />
+        <conditions>
+          <condition>
+            <negated>N</negated>
+            <operator>AND</operator>
+            <leftvalue>Gas and diesel consumption</leftvalue>
+            <function>IS NOT NULL</function>
+            <rightvalue />
+          </condition>
+          <condition>
+            <negated>N</negated>
+            <operator>AND</operator>
+            <leftvalue>Charcoal consumption</leftvalue>
+            <function>IS NOT NULL</function>
+            <rightvalue />
+          </condition>
+        </conditions>
       </condition>
     </compare>
     <cluster_schema />
@@ -1449,8 +1368,133 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>240</xloc>
-      <yloc>368</yloc>
+      <xloc>1760</xloc>
+      <yloc>160</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Select valori tabella finale</name>
+    <type>SelectValues</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <fields>
+      <field>
+        <name>Code</name>
+        <rename>Country code</rename>
+      </field>
+      <field>
+        <name>Country name</name>
+        <rename />
+      </field>
+      <field>
+        <name>Population</name>
+        <rename />
+      </field>
+      <field>
+        <name>CO2 production</name>
+        <rename />
+      </field>
+      <field>
+        <name>Charcoal consumption</name>
+        <rename />
+      </field>
+      <field>
+        <name>Gas oil/diesel oil consumption</name>
+        <rename>Gas and diesel consumption</rename>
+      </field>
+      <field>
+        <name>Solar energy percentage</name>
+        <rename />
+      </field>
+      <select_unspecified>N</select_unspecified>
+    </fields>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1584</xloc>
+      <yloc>160</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Seleziona colonne benzina/diesel</name>
+    <type>SelectValues</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <fields>
+      <field>
+        <name>Country or Area</name>
+        <rename>Country Name</rename>
+      </field>
+      <field>
+        <name>Quantity</name>
+        <rename>Gas oil/diesel oil consumption</rename>
+      </field>
+      <select_unspecified>N</select_unspecified>
+    </fields>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>464</xloc>
+      <yloc>272</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Seleziona colonne carbone</name>
+    <type>SelectValues</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <fields>
+      <field>
+        <name>Country or Area</name>
+        <rename>Country Name</rename>
+      </field>
+      <field>
+        <name>Quantity</name>
+        <rename>Charcoal consumption</rename>
+      </field>
+      <select_unspecified>N</select_unspecified>
+    </fields>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>464</xloc>
+      <yloc>16</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1468,11 +1512,9 @@
     <fields>
       <field>
         <name>Country Code</name>
-        <rename />
       </field>
       <field>
         <name>Country Name</name>
-        <rename />
       </field>
       <field>
         <name>2014 [YR2014]</name>
@@ -1490,47 +1532,6 @@
     <GUI>
       <xloc>464</xloc>
       <yloc>368</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>Sort codes codici nazioni</name>
-    <type>SortRows</type>
-    <description />
-    <distribute>Y</distribute>
-    <custom_distribution />
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name />
-    </partitioning>
-    <directory>%%java.io.tmpdir%%</directory>
-    <prefix>out</prefix>
-    <sort_size>1000000</sort_size>
-    <free_memory />
-    <compress>N</compress>
-    <compress_variable />
-    <unique_rows>N</unique_rows>
-    <fields>
-      <field>
-        <name>ISO3166-1-Alpha-3</name>
-        <ascending>Y</ascending>
-        <case_sensitive>N</case_sensitive>
-        <collator_enabled>N</collator_enabled>
-        <collator_strength>0</collator_strength>
-        <presorted>N</presorted>
-      </field>
-    </fields>
-    <cluster_schema />
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>240</xloc>
-      <yloc>192</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1576,79 +1577,7 @@
     </GUI>
   </step>
   <step>
-    <name>Join CO2</name>
-    <type>MergeJoin</type>
-    <description />
-    <distribute>Y</distribute>
-    <custom_distribution />
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name />
-    </partitioning>
-    <join_type>LEFT OUTER</join_type>
-    <step1>Sort codes codici nazioni</step1>
-    <step2>Sort CO2</step2>
-    <keys_1>
-      <key>ISO3166-1-Alpha-3</key>
-    </keys_1>
-    <keys_2>
-      <key>Country Code</key>
-    </keys_2>
-    <cluster_schema />
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>832</xloc>
-      <yloc>320</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>Select valori CO2</name>
-    <type>SelectValues</type>
-    <description />
-    <distribute>Y</distribute>
-    <custom_distribution />
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name />
-    </partitioning>
-    <fields>
-      <field>
-        <name>ISO3166-1-Alpha-3</name>
-        <rename>Code</rename>
-      </field>
-      <field>
-        <name>﻿official_name_en</name>
-        <rename>Country Name</rename>
-      </field>
-      <field>
-        <name>CO2 production</name>
-        <rename />
-      </field>
-      <select_unspecified>N</select_unspecified>
-    </fields>
-    <cluster_schema />
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>1168</xloc>
-      <yloc>320</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>Sort code carbone</name>
+    <name>Sort benzina/diesel</name>
     <type>SortRows</type>
     <description />
     <distribute>Y</distribute>
@@ -1667,7 +1596,7 @@
     <unique_rows>N</unique_rows>
     <fields>
       <field>
-        <name>Code</name>
+        <name>Country Name</name>
         <ascending>Y</ascending>
         <case_sensitive>N</case_sensitive>
         <collator_enabled>N</collator_enabled>
@@ -1683,8 +1612,49 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>1168</xloc>
-      <yloc>48</yloc>
+      <xloc>672</xloc>
+      <yloc>272</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Sort carbone</name>
+    <type>SortRows</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <directory>%%java.io.tmpdir%%</directory>
+    <prefix>out</prefix>
+    <sort_size>1000000</sort_size>
+    <free_memory />
+    <compress>N</compress>
+    <compress_variable />
+    <unique_rows>N</unique_rows>
+    <fields>
+      <field>
+        <name>Country Name</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>N</collator_enabled>
+        <collator_strength>0</collator_strength>
+        <presorted>N</presorted>
+      </field>
+    </fields>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>672</xloc>
+      <yloc>16</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1730,8 +1700,8 @@
     </GUI>
   </step>
   <step>
-    <name>Multiway Merge Join</name>
-    <type>MultiwayMergeJoin</type>
+    <name>Sort code carbone</name>
+    <type>SortRows</type>
     <description />
     <distribute>Y</distribute>
     <custom_distribution />
@@ -1740,16 +1710,23 @@
       <method>none</method>
       <schema_name />
     </partitioning>
-    <join_type>INNER</join_type>
-    <step0>Sort code carbone</step0>
-    <step1>Sort code benzina/diesel</step1>
-    <step2>Select valori CO2</step2>
-    <number_input>3</number_input>
-    <keys>
-      <key>Code</key>
-      <key>Code</key>
-      <key>Code</key>
-    </keys>
+    <directory>%%java.io.tmpdir%%</directory>
+    <prefix>out</prefix>
+    <sort_size>1000000</sort_size>
+    <free_memory />
+    <compress>N</compress>
+    <compress_variable />
+    <unique_rows>N</unique_rows>
+    <fields>
+      <field>
+        <name>Code</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>N</collator_enabled>
+        <collator_strength>0</collator_strength>
+        <presorted>N</presorted>
+      </field>
+    </fields>
     <cluster_schema />
     <remotesteps>
       <input>
@@ -1758,13 +1735,393 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>1376</xloc>
-      <yloc>160</yloc>
+      <xloc>1168</xloc>
+      <yloc>48</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>Select valori tabella finale</name>
+    <name>Sort codes codici nazioni</name>
+    <type>SortRows</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <directory>%%java.io.tmpdir%%</directory>
+    <prefix>out</prefix>
+    <sort_size>1000000</sort_size>
+    <free_memory />
+    <compress>N</compress>
+    <compress_variable />
+    <unique_rows>N</unique_rows>
+    <fields>
+      <field>
+        <name>ISO3166-1-Alpha-3</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>N</collator_enabled>
+        <collator_strength>0</collator_strength>
+        <presorted>N</presorted>
+      </field>
+    </fields>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>256</xloc>
+      <yloc>176</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Sort country codici nazione</name>
+    <type>SortRows</type>
+    <description />
+    <distribute>N</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <directory>%%java.io.tmpdir%%</directory>
+    <prefix>out</prefix>
+    <sort_size>1000000</sort_size>
+    <free_memory />
+    <compress>N</compress>
+    <compress_variable />
+    <unique_rows>N</unique_rows>
+    <fields>
+      <field>
+        <name>﻿official_name_en</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>N</collator_enabled>
+        <collator_strength>0</collator_strength>
+        <presorted>N</presorted>
+      </field>
+    </fields>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>496</xloc>
+      <yloc>128</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Tutti codici nazione</name>
+    <type>CsvInput</type>
+    <description />
+    <distribute>N</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <filename>/Users/pietro/Documents/Universita/Pogetto DT_ML/Dataset/Puliti_da_usare/Country-codes-v1.csv</filename>
+    <filename_field />
+    <rownum_field />
+    <include_filename>N</include_filename>
+    <separator>;</separator>
+    <enclosure>"</enclosure>
+    <header>Y</header>
+    <buffer_size>50000</buffer_size>
+    <lazy_conversion>Y</lazy_conversion>
+    <add_filename_result>N</add_filename_result>
+    <parallel>N</parallel>
+    <newline_possible>N</newline_possible>
+    <encoding />
+    <fields>
+      <field>
+        <name>﻿official_name_en</name>
+        <type>String</type>
+        <format />
+        <currency>€</currency>
+        <decimal>,</decimal>
+        <group>.</group>
+        <length>46</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>ISO3166-1-Alpha-3</name>
+        <type>String</type>
+        <format />
+        <currency>€</currency>
+        <decimal>,</decimal>
+        <group>.</group>
+        <length>3</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>CLDR display name</name>
+        <type>String</type>
+        <format />
+        <currency>€</currency>
+        <decimal>,</decimal>
+        <group>.</group>
+        <length>30</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+    </fields>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>48</xloc>
+      <yloc>112</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Energia solare</name>
+    <type>CsvInput</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <filename>/Users/pietro/Documents/Universita/Pogetto DT_ML/Dataset/Puliti_da_usare/clean-energy-percentage.csv</filename>
+    <filename_field />
+    <rownum_field />
+    <include_filename>N</include_filename>
+    <separator>;</separator>
+    <enclosure>"</enclosure>
+    <header>Y</header>
+    <buffer_size>50000</buffer_size>
+    <lazy_conversion>Y</lazy_conversion>
+    <add_filename_result>N</add_filename_result>
+    <parallel>N</parallel>
+    <newline_possible>N</newline_possible>
+    <encoding />
+    <fields>
+      <field>
+        <name>﻿Country Name</name>
+        <type>String</type>
+        <format />
+        <currency>€</currency>
+        <decimal>,</decimal>
+        <group>.</group>
+        <length>45</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>Country Code</name>
+        <type>String</type>
+        <format />
+        <currency>€</currency>
+        <decimal>,</decimal>
+        <group>.</group>
+        <length>3</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>2000</name>
+        <type>Number</type>
+        <format>#.#</format>
+        <currency>€</currency>
+        <decimal>,</decimal>
+        <group>.</group>
+        <length>11</length>
+        <precision>9</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>2001</name>
+        <type>Number</type>
+        <format>#.#</format>
+        <currency>€</currency>
+        <decimal>,</decimal>
+        <group>.</group>
+        <length>11</length>
+        <precision>9</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>2002</name>
+        <type>Number</type>
+        <format>#.#</format>
+        <currency>€</currency>
+        <decimal>,</decimal>
+        <group>.</group>
+        <length>11</length>
+        <precision>9</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>2003</name>
+        <type>Number</type>
+        <format>#.#</format>
+        <currency>€</currency>
+        <decimal>,</decimal>
+        <group>.</group>
+        <length>11</length>
+        <precision>9</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>2004</name>
+        <type>Number</type>
+        <format>#.#</format>
+        <currency>€</currency>
+        <decimal>,</decimal>
+        <group>.</group>
+        <length>11</length>
+        <precision>9</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>2005</name>
+        <type>Number</type>
+        <format>#.#</format>
+        <currency>€</currency>
+        <decimal>,</decimal>
+        <group>.</group>
+        <length>11</length>
+        <precision>9</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>2006</name>
+        <type>Number</type>
+        <format>#.#</format>
+        <currency>€</currency>
+        <decimal>,</decimal>
+        <group>.</group>
+        <length>11</length>
+        <precision>9</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>2007</name>
+        <type>Number</type>
+        <format>#.#</format>
+        <currency>€</currency>
+        <decimal>,</decimal>
+        <group>.</group>
+        <length>11</length>
+        <precision>9</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>2008</name>
+        <type>Number</type>
+        <format>#.#</format>
+        <currency>€</currency>
+        <decimal>,</decimal>
+        <group>.</group>
+        <length>11</length>
+        <precision>9</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>2009</name>
+        <type>Number</type>
+        <format>#.#</format>
+        <currency>€</currency>
+        <decimal>,</decimal>
+        <group>.</group>
+        <length>11</length>
+        <precision>9</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>2010</name>
+        <type>Number</type>
+        <format>#.#</format>
+        <currency>€</currency>
+        <decimal>,</decimal>
+        <group>.</group>
+        <length>11</length>
+        <precision>9</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>2011</name>
+        <type>Number</type>
+        <format>#.#</format>
+        <currency>€</currency>
+        <decimal>,</decimal>
+        <group>.</group>
+        <length>11</length>
+        <precision>9</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>2012</name>
+        <type>Number</type>
+        <format>#.#</format>
+        <currency>€</currency>
+        <decimal>,</decimal>
+        <group>.</group>
+        <length>11</length>
+        <precision>9</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>2013</name>
+        <type>Number</type>
+        <format>#.#</format>
+        <currency>€</currency>
+        <decimal>,</decimal>
+        <group>.</group>
+        <length>11</length>
+        <precision>9</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>2014</name>
+        <type>Number</type>
+        <format>#.#</format>
+        <currency>€</currency>
+        <decimal>,</decimal>
+        <group>.</group>
+        <length>11</length>
+        <precision>9</precision>
+        <trim_type>none</trim_type>
+      </field>
+    </fields>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>48</xloc>
+      <yloc>496</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Seleziona 2014 energia solare</name>
     <type>SelectValues</type>
     <description />
     <distribute>Y</distribute>
@@ -1776,24 +2133,16 @@
     </partitioning>
     <fields>
       <field>
-        <name>Code</name>
-        <rename>Country code</rename>
+        <name>Country Code</name>
+        <rename>Code</rename>
       </field>
       <field>
-        <name>Country name</name>
+        <name>﻿Country Name</name>
         <rename />
       </field>
       <field>
-        <name>CO2 production</name>
-        <rename />
-      </field>
-      <field>
-        <name>Charcoal consumption</name>
-        <rename />
-      </field>
-      <field>
-        <name>Gas oil/diesel oil consumption</name>
-        <rename />
+        <name>2014</name>
+        <rename>Solar energy percentage</rename>
       </field>
       <select_unspecified>N</select_unspecified>
     </fields>
@@ -1805,14 +2154,14 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>1584</xloc>
-      <yloc>160</yloc>
+      <xloc>240</xloc>
+      <yloc>496</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>Select valori finali not null</name>
-    <type>FilterRows</type>
+    <name>Sort code energia solare</name>
+    <type>SortRows</type>
     <description />
     <distribute>Y</distribute>
     <custom_distribution />
@@ -1821,29 +2170,23 @@
       <method>none</method>
       <schema_name />
     </partitioning>
-    <send_true_to />
-    <send_false_to />
-    <compare>
-      <condition>
-        <negated>N</negated>
-        <conditions>
-          <condition>
-            <negated>N</negated>
-            <operator>AND</operator>
-            <leftvalue>Gas oil/diesel oil consumption</leftvalue>
-            <function>IS NOT NULL</function>
-            <rightvalue />
-          </condition>
-          <condition>
-            <negated>N</negated>
-            <operator>AND</operator>
-            <leftvalue>Charcoal consumption</leftvalue>
-            <function>IS NOT NULL</function>
-            <rightvalue />
-          </condition>
-        </conditions>
-      </condition>
-    </compare>
+    <directory>%%java.io.tmpdir%%</directory>
+    <prefix>out</prefix>
+    <sort_size>1000000</sort_size>
+    <free_memory />
+    <compress>N</compress>
+    <compress_variable />
+    <unique_rows>N</unique_rows>
+    <fields>
+      <field>
+        <name>Code</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>N</collator_enabled>
+        <collator_strength>0</collator_strength>
+        <presorted>N</presorted>
+      </field>
+    </fields>
     <cluster_schema />
     <remotesteps>
       <input>
@@ -1852,8 +2195,343 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>1760</xloc>
-      <yloc>160</yloc>
+      <xloc>992</xloc>
+      <yloc>496</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Popolazione</name>
+    <type>CsvInput</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <filename>/Users/pietro/Documents/Universita/Pogetto DT_ML/Dataset/Puliti_da_usare/Population.csv</filename>
+    <filename_field />
+    <rownum_field />
+    <include_filename>N</include_filename>
+    <separator>;</separator>
+    <enclosure>"</enclosure>
+    <header>Y</header>
+    <buffer_size>50000</buffer_size>
+    <lazy_conversion>Y</lazy_conversion>
+    <add_filename_result>N</add_filename_result>
+    <parallel>N</parallel>
+    <newline_possible>N</newline_possible>
+    <encoding />
+    <fields>
+      <field>
+        <name>﻿Country Name</name>
+        <type>String</type>
+        <format />
+        <currency>€</currency>
+        <decimal>,</decimal>
+        <group>.</group>
+        <length>45</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>Country Code</name>
+        <type>String</type>
+        <format />
+        <currency>€</currency>
+        <decimal>,</decimal>
+        <group>.</group>
+        <length>3</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>2000</name>
+        <type>Integer</type>
+        <format>#</format>
+        <currency>€</currency>
+        <decimal>,</decimal>
+        <group>.</group>
+        <length>15</length>
+        <precision>0</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>2001</name>
+        <type>Integer</type>
+        <format>#</format>
+        <currency>€</currency>
+        <decimal>,</decimal>
+        <group>.</group>
+        <length>15</length>
+        <precision>0</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>2002</name>
+        <type>Integer</type>
+        <format>#</format>
+        <currency>€</currency>
+        <decimal>,</decimal>
+        <group>.</group>
+        <length>15</length>
+        <precision>0</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>2003</name>
+        <type>Integer</type>
+        <format>#</format>
+        <currency>€</currency>
+        <decimal>,</decimal>
+        <group>.</group>
+        <length>15</length>
+        <precision>0</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>2004</name>
+        <type>Integer</type>
+        <format>#</format>
+        <currency>€</currency>
+        <decimal>,</decimal>
+        <group>.</group>
+        <length>15</length>
+        <precision>0</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>2005</name>
+        <type>Integer</type>
+        <format>#</format>
+        <currency>€</currency>
+        <decimal>,</decimal>
+        <group>.</group>
+        <length>15</length>
+        <precision>0</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>2006</name>
+        <type>Integer</type>
+        <format>#</format>
+        <currency>€</currency>
+        <decimal>,</decimal>
+        <group>.</group>
+        <length>15</length>
+        <precision>0</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>2007</name>
+        <type>Integer</type>
+        <format>#</format>
+        <currency>€</currency>
+        <decimal>,</decimal>
+        <group>.</group>
+        <length>15</length>
+        <precision>0</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>2008</name>
+        <type>Integer</type>
+        <format>#</format>
+        <currency>€</currency>
+        <decimal>,</decimal>
+        <group>.</group>
+        <length>15</length>
+        <precision>0</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>2009</name>
+        <type>Integer</type>
+        <format>#</format>
+        <currency>€</currency>
+        <decimal>,</decimal>
+        <group>.</group>
+        <length>15</length>
+        <precision>0</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>2010</name>
+        <type>Integer</type>
+        <format>#</format>
+        <currency>€</currency>
+        <decimal>,</decimal>
+        <group>.</group>
+        <length>15</length>
+        <precision>0</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>2011</name>
+        <type>Integer</type>
+        <format>#</format>
+        <currency>€</currency>
+        <decimal>,</decimal>
+        <group>.</group>
+        <length>15</length>
+        <precision>0</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>2012</name>
+        <type>Integer</type>
+        <format>#</format>
+        <currency>€</currency>
+        <decimal>,</decimal>
+        <group>.</group>
+        <length>15</length>
+        <precision>0</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>2013</name>
+        <type>Integer</type>
+        <format>#</format>
+        <currency>€</currency>
+        <decimal>,</decimal>
+        <group>.</group>
+        <length>15</length>
+        <precision>0</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>2014</name>
+        <type>Integer</type>
+        <format>#</format>
+        <currency>€</currency>
+        <decimal>,</decimal>
+        <group>.</group>
+        <length>15</length>
+        <precision>0</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>2015</name>
+        <type>Integer</type>
+        <format>#</format>
+        <currency>€</currency>
+        <decimal>,</decimal>
+        <group>.</group>
+        <length>15</length>
+        <precision>0</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>2016</name>
+        <type>Integer</type>
+        <format>#</format>
+        <currency>€</currency>
+        <decimal>,</decimal>
+        <group>.</group>
+        <length>15</length>
+        <precision>0</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>2017</name>
+        <type>Boolean</type>
+        <format />
+        <currency>€</currency>
+        <decimal>,</decimal>
+        <group>.</group>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+    </fields>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>48</xloc>
+      <yloc>672</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Seleziona 2014 popolazione</name>
+    <type>SelectValues</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <fields>
+      <field>
+        <name>Country Code</name>
+        <rename>Code</rename>
+      </field>
+      <field>
+        <name>2014</name>
+        <rename>Population</rename>
+      </field>
+      <select_unspecified>N</select_unspecified>
+    </fields>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>240</xloc>
+      <yloc>672</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Sort popolazione</name>
+    <type>SortRows</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <directory>%%java.io.tmpdir%%</directory>
+    <prefix>out</prefix>
+    <sort_size>1000000</sort_size>
+    <free_memory />
+    <compress>N</compress>
+    <compress_variable />
+    <unique_rows>N</unique_rows>
+    <fields>
+      <field>
+        <name>Code</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>N</collator_enabled>
+        <collator_strength>0</collator_strength>
+        <presorted>N</presorted>
+      </field>
+    </fields>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1088</xloc>
+      <yloc>672</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
