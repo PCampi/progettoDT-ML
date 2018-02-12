@@ -2,3 +2,5 @@ DataCleaner
 Dataset/Originali
 .vscode
 .venv
+DTML.code-workspace
+dev-requirements.txt
